@@ -129,29 +129,29 @@ MyProject/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/build
 .PHONY : MyProject/fast
 
-main.o: main.cpp.o
-.PHONY : main.o
+webcamtest.o: webcamtest.cpp.o
+.PHONY : webcamtest.o
 
 # target to build an object file
-main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/main.cpp.o
-.PHONY : main.cpp.o
+webcamtest.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/webcamtest.cpp.o
+.PHONY : webcamtest.cpp.o
 
-main.i: main.cpp.i
-.PHONY : main.i
+webcamtest.i: webcamtest.cpp.i
+.PHONY : webcamtest.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/main.cpp.i
-.PHONY : main.cpp.i
+webcamtest.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/webcamtest.cpp.i
+.PHONY : webcamtest.cpp.i
 
-main.s: main.cpp.s
-.PHONY : main.s
+webcamtest.s: webcamtest.cpp.s
+.PHONY : webcamtest.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/main.cpp.s
-.PHONY : main.cpp.s
+webcamtest.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/webcamtest.cpp.s
+.PHONY : webcamtest.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MyProject"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
+	@echo "... webcamtest.o"
+	@echo "... webcamtest.i"
+	@echo "... webcamtest.s"
 .PHONY : help
 
 
