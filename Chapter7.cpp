@@ -48,8 +48,7 @@ void getContours(Mat dil_img, Mat img){
                 drawContours(img,contours,i,Scalar(255,0,255),2);
                 drawContours(img,conPoly,i,Scalar(0,0,255),2);
 
-                //The lenght of any of conPoly will give us an aproximation of the shape
-
+                //The length of any of conPoly will give us an aproximation of the shape
                 cout << conPoly[i].size() << endl;
                 //So for example, if the answer is 3, triangle
             
@@ -60,7 +59,19 @@ void getContours(Mat dil_img, Mat img){
                 //Now we want to distinct which shape is which
                 int objCor = (int)conPoly[i].size(); //(int) converts to integer
                 if(objCor == 3){ objectType = "triangle";}
-                else if(objCor == 4){ objectType = "rectangle";}
+                else if(objCor == 4){ 
+                    //recognize if its square
+                    //Dividing height/width, should give 1 (between 0.9 to 1.1)
+                    float aspRatio  = (float)boundRect[i].width/(float)boundRect[i].height;
+                    if (aspRatio > 0.95 && aspRatio <1.05){
+                        objectType = "square";
+                        
+                    }
+                    else{
+                    objectType = "rectangle";
+                    }
+                    cout << aspRatio <<endl;
+                    }
                 else if(objCor == 8){ objectType = "circle";}
 
                 putText(img,objectType,{boundRect[i].x,boundRect[i].y-5},FONT_HERSHEY_DUPLEX,0.5,Scalar(0,0,100),2);
