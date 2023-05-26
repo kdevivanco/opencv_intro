@@ -11,7 +11,9 @@
 using namespace cv;
 using namespace std;
 
-////how to import video
+//// Importing Video ////
+
+
 //We must use a while loop to catch every frame 
 
 int main(){
