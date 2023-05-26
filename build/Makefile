@@ -129,29 +129,29 @@ MyProject/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/build
 .PHONY : MyProject/fast
 
-Chapter1.2.o: Chapter1.2.cpp.o
-.PHONY : Chapter1.2.o
+Chapter7.o: Chapter7.cpp.o
+.PHONY : Chapter7.o
 
 # target to build an object file
-Chapter1.2.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter1.2.cpp.o
-.PHONY : Chapter1.2.cpp.o
+Chapter7.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter7.cpp.o
+.PHONY : Chapter7.cpp.o
 
-Chapter1.2.i: Chapter1.2.cpp.i
-.PHONY : Chapter1.2.i
+Chapter7.i: Chapter7.cpp.i
+.PHONY : Chapter7.i
 
 # target to preprocess a source file
-Chapter1.2.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter1.2.cpp.i
-.PHONY : Chapter1.2.cpp.i
+Chapter7.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter7.cpp.i
+.PHONY : Chapter7.cpp.i
 
-Chapter1.2.s: Chapter1.2.cpp.s
-.PHONY : Chapter1.2.s
+Chapter7.s: Chapter7.cpp.s
+.PHONY : Chapter7.s
 
 # target to generate assembly for a file
-Chapter1.2.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter1.2.cpp.s
-.PHONY : Chapter1.2.cpp.s
+Chapter7.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter7.cpp.s
+.PHONY : Chapter7.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MyProject"
-	@echo "... Chapter1.2.o"
-	@echo "... Chapter1.2.i"
-	@echo "... Chapter1.2.s"
+	@echo "... Chapter7.o"
+	@echo "... Chapter7.i"
+	@echo "... Chapter7.s"
 .PHONY : help
 
 

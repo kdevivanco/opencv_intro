@@ -14,6 +14,7 @@
 
         string path = "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/Resources/test.png";
         Mat img = imread(path);
+        
         imshow("Image", img);
         waitKey(0);
         return 0;

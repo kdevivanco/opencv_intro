@@ -1,6 +1,6 @@
 
 //Reference: https://www.youtube.com/watch?v=2FYm3GOonhk
-// 00:36 min
+
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
@@ -9,13 +9,10 @@
 using namespace cv;
 using namespace std;
 
-////// BASIC FUNCTIONS ////
-
-
 //Modifying images
 int main(){
 
-    string path = "/Users /macbookpro/Desktop/UTEC/OpenCV/opencv3test/Resources/test.png";
+    string path = "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/Resources/test.png";
     Mat img = imread(path);
     Mat imgGray; //Create destination img
     Mat imgBlur, imgCanny, imgDialation, imgErode;
