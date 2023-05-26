@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/webcamtest.cpp" "CMakeFiles/MyProject.dir/webcamtest.cpp.o" "gcc" "CMakeFiles/MyProject.dir/webcamtest.cpp.o.d"
+  "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/Chapter1.2.cpp" "CMakeFiles/MyProject.dir/Chapter1.2.cpp.o" "gcc" "CMakeFiles/MyProject.dir/Chapter1.2.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.
