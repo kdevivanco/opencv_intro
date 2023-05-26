@@ -21,7 +21,7 @@ int main(){
     cvtColor(img,imgGray,COLOR_BGR2GRAY);
 
     //Blur
-    GaussianBlur(img,imgBlur,Size(3,3),3,0);
+    GaussianBlur(imgGray,imgBlur,Size(3,3),3,0);
 
     //Edge detector
     //when we use edge detector it is good practice to blur the image beforehand
