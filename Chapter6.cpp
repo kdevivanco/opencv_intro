@@ -21,7 +21,7 @@ int vmax = 255;
 
 
 int main() {
-    string path = "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/Resources/shapes.png";
+    string path = "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/Resources/lambo.png";
     Mat img = imread(path);
     namedWindow("Trackbars",(640,200));
     //Hue minimum
@@ -53,7 +53,7 @@ int main() {
     imshow("original", img);
     imshow("hsv",img_hsv);
     imshow("mask",mask);
-    waitKey(1);
+    waitKey(1000);
     }
 
     return 0;

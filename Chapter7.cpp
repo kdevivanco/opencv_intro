@@ -98,10 +98,10 @@ int main(){
     getContours(img_dilated,img);
 
     imshow("ImageName", img);
-    // imshow("ImageGray", imgGray);
-    // imshow("ImageBlur", imgBlur);
-    // imshow("ImageCanny", imgCanny);
-    // imshow("ImageDilated", img_dilated);
+    imshow("ImageGray", imgGray);
+    imshow("ImageBlur", imgBlur);
+    imshow("ImageCanny", imgCanny);
+    imshow("ImageDilated", img_dilated);
     waitKey(10000); 
     return 0;
     
