@@ -15,7 +15,7 @@ using namespace std;
 //No output func?? wasnt allowed
 int main(){
 
-    string path = "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/Resources/test.png";
+    string path = "/Users/macbookpro/Desktop/UTEC/OpenCV/opencv3test/Resources/facetest2.png";
     //Mat is the var type for images 
     //Mat is a ma^trix data type that opencv handles
     //It handles all images
@@ -45,12 +45,45 @@ int main(){
     //So we iterate through the faces and print the coordinates
     for(int i = 0; i < faces.size(); i++){
         rectangle(img,faces[i].tl(),faces[i].br(), Scalar(0, 0, 255), 3);
-        }
+        cout << faces[i].tl();
+            cout << faces[i].br();
+        //get the x coordinate of faces[i].tl();
+        //get the y coordinate of faces[i].tl();
+        //get the x coordinate of faces[i].br();
+        //get the y coordinate of faces[i].br();
     
+        }
+    Point p1, p2; 
+    p1 = faces[0].tl();
+    p2 = faces[0].br();
+    cout << p2;
+     //CROPPING IMAGES
+    //Important to cut object, to add more processing in that specific region 
+    // This region is called region of interest -> ROI
+    // To crop images, we can use rectangles
+    Rect roi(p1.x,p1.y,p2.x - p1.x,(p2.y - p1.y)/1.5); //Inside here we must define x,y witdh and height
+    // //So from point 100,100. We go 300px to the right, then 250 bottom
+    Mat imgCrop;
+    imgCrop = img(roi);
+    
+    Mat imgGray, imgBlur, imgCanny, img_dilated, imgErode;
+
+    //Preprocessing
+    cvtColor(imgCrop,imgGray,COLOR_BGR2GRAY);
+    GaussianBlur(imgGray,imgBlur,Size(3,3),3,0);
+    Canny(imgBlur, imgCanny,25,75);
+    Mat kernel = getStructuringElement(MORPH_RECT,Size(3,3));
+    dilate(imgCanny,img_dilated,kernel);
+    //This prevents holes in the outlines
+   // getContours(img_dilated,img);
+//
 
 
     imshow("ImageName", img);
-    waitKey(1000); //Whenever it opens up it will not close until we pres the open button
+    imshow("roi", imgCrop);
+    imshow("cnt",img_dilated);
+
+    waitKey(5000); //Whenever it opens up it will not close until we pres the open button
     return 0;
     
 
