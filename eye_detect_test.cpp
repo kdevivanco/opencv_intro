@@ -9,6 +9,17 @@
 using namespace cv;
 using namespace std;
 
+Mat img_hsv;
+Mat mask;
+int hmin = 145;
+int smin = 0;
+int vmin = 0;
+
+int hmax = 179;
+int smax = 255;
+int vmax = 255;
+
+
 void getContours(Mat dil_img, Mat img){
     // Detect contours
     vector<vector<Point>> contours;
@@ -29,49 +40,32 @@ void getContours(Mat dil_img, Mat img){
     for(int i=0; i<contours.size();i++){
         int area = contourArea(contours[i]);
         
-            cout << "Area: " << area << endl;
             
-                //Draw contours
-                // drawContours(img,contours,i,Scalar(255,0,255),2);
-                //i is the contours that are kept 
-                //Now that the obj are filtered,
-                //We are going to find the bounding box
                 //To do that we must find the perimeter
                 float peri = arcLength(contours[i],true); //True makes reference to if the contour is closed
+                string per = to_string(peri);
+
                 //Now we must find the corner points (number of curves)
                 approxPolyDP(contours[i],conPoly[i],0.02*peri,true); //true = closed
                 //conPoly = array of values of curves
-                drawContours(img,contours,i,Scalar(255,0,255),2);
-                //drawContours(img,conPoly,i,Scalar(0,0,255),2);
 
                 //The length of any of conPoly will give us an aproximation of the shape
                 cout << conPoly[i].size() << endl;
-                //So for example, if the answer is 3, triangle
-            
+
+
                 //To draw rectangles around the shape: 
-                boundRect[i] = boundingRect(conPoly[i]); //function 
-                //rectangle(img,boundRect[i].tl(),boundRect[i].br(),Scalar(0,255,0),5);
+                boundRect[i] = boundingRect(conPoly[i]); 
 
-                //Now we want to distinct which shape is which
                 int objCor = (int)conPoly[i].size(); //(int) converts to integer
-                if(objCor == 3){ objectType = "triangle";}
-                else if(objCor == 4){ 
-                    //recognize if its square
-                    //Dividing height/width, should give 1 (between 0.9 to 1.1)
-                    float aspRatio  = (float)boundRect[i].width/(float)boundRect[i].height;
-                    if (aspRatio > 0.95 && aspRatio <1.05){
-                        objectType = "square";
-                        
-                    }
-                    else{
-                    objectType = "rectangle";
-                    }
-                    cout << aspRatio <<endl;
-                    }
-                else if(objCor == 8){ 
-                    objectType = "circle";
 
-                putText(img,objectType,{boundRect[i].x,boundRect[i].y-5},FONT_HERSHEY_DUPLEX,0.5,Scalar(0,0,100),2);}
+                if(objCor >= 6 && peri > 60){ 
+                    //objectType = "circle";
+                drawContours(img,contours,i,Scalar(255,0,255),1);
+                putText(img,per,{boundRect[i].x,boundRect[i].y-5},FONT_HERSHEY_DUPLEX,0.5,Scalar(0,0,100),1);
+
+
+                //putText(img,objectType,{boundRect[i].x,boundRect[i].y-5},FONT_HERSHEY_DUPLEX,0.5,Scalar(0,0,100),2);
+                }
 
             }
         
@@ -152,13 +146,13 @@ vector<Mat> crop_faces(vector<string> paths){
                 Mat imgGray, imgBlur, imgCanny, img_dilated, imgErode;
 
                 cvtColor(imgCropEye,imgGray,COLOR_BGR2GRAY);
-                GaussianBlur(imgGray,imgBlur,Size(3,3),7,0);
+                GaussianBlur(imgGray,imgBlur,Size(3,3),7,2);
                 Canny(imgBlur, imgCanny,120,120);
                 Mat kernel = getStructuringElement(MORPH_RECT,Size(3,3));
                 dilate(imgCanny,img_dilated,kernel);
                 getContours(img_dilated,imgCropEye);
                 //faces.push_back(img_dilated);
-                faces.push_back(imgCropEye);
+                //faces.push_back(imgCropEye);
 
 
             }
@@ -187,6 +181,38 @@ int main(){
     
 
     vector<Mat> faces = crop_faces(paths);
+
+    // namedWindow("Trackbars",(640,200));
+    // //Hue minimum
+    // //Adress of the value and maximum value;
+    // createTrackbar("Hue min", "Trackbars", &hmin, 179);
+    // createTrackbar("Hue Max", "Trackbars", &hmax, 179);
+    // createTrackbar("Sat min", "Trackbars", &smin, 255);
+    // createTrackbar("Sat min", "Trackbars", &smax, 255);
+    // createTrackbar("Val min", "Trackbars", &vmin, 255);
+    // createTrackbar("Val min", "Trackbars", &vmin, 255);
+
+    // cvtColor(faces[10], img_hsv, COLOR_BGR2HSV);
+
+    // while(true){
+
+
+    //     Scalar lower(hmin,smin,vmin);
+    //     Scalar upper(hmax,smax,vmax);
+    //     // Threshold the HSV image to get only colors we are interested in
+
+
+    //     //Then transform
+    //     inRange(img_hsv,lower,upper,mask);
+    //     //mask will be our output image
+    //     //So the output will be a range of colors
+
+        
+    //     imshow("hsv",img_hsv);
+    //     imshow("mask",mask);
+    //     waitKey(1000);
+
+    // }
     
     imshow("ImageName", faces[0]);
     imshow("d", faces[1]);
@@ -194,13 +220,13 @@ int main(){
     imshow("ds", faces[3]);
     imshow("1",faces[4]);
     imshow("2",faces[5]);
-    imshow("3", faces[6]);
-    imshow("4", faces[7]);
-    imshow("5a", faces[8]);
-    imshow("5s", faces[9]);
-    imshow("6",faces[10]);
-    imshow("7",faces[11]);
-    imshow("8", faces[12]);
+   // imshow("3", faces[6]);
+    // imshow("4", faces[7]);
+    // imshow("5a", faces[8]);
+    // imshow("5s", faces[9]);
+    // imshow("6",faces[10]);
+    // imshow("7",faces[11]);
+    // imshow("8", faces[12]);
 
 
     waitKey(20000); //Whenever it opens up it will not close until we pres the open button
