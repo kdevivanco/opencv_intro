@@ -1,5 +1,3 @@
-//Face detection 
-//Reference: https://www.youtube.com/watch?v=2FYm3GOonhk
 
 #include <opencv2/imgcodecs.hpp>
 #include <opencv2/highgui.hpp>

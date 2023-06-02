@@ -79,10 +79,10 @@ int main() {
 
 
 
-    imshow("Original", img);
-    imshow("imgCanny", imgBlur);
-    imshow("imgCanny", imgCanny);
-    imshow("imgDil", imgDilated);
+    // imshow("Original", img);
+    // imshow("imgCanny", imgBlur);
+    // imshow("imgCanny", imgCanny);
+    // imshow("imgDil", imgDilated);
     imshow("Blank",blackimg);
 
     imshow("Original Image", imgContours);

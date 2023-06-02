@@ -129,29 +129,29 @@ MyProject/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/build
 .PHONY : MyProject/fast
 
-Chapter8.o: Chapter8.cpp.o
-.PHONY : Chapter8.o
+eye_detect_test.o: eye_detect_test.cpp.o
+.PHONY : eye_detect_test.o
 
 # target to build an object file
-Chapter8.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter8.cpp.o
-.PHONY : Chapter8.cpp.o
+eye_detect_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/eye_detect_test.cpp.o
+.PHONY : eye_detect_test.cpp.o
 
-Chapter8.i: Chapter8.cpp.i
-.PHONY : Chapter8.i
+eye_detect_test.i: eye_detect_test.cpp.i
+.PHONY : eye_detect_test.i
 
 # target to preprocess a source file
-Chapter8.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter8.cpp.i
-.PHONY : Chapter8.cpp.i
+eye_detect_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/eye_detect_test.cpp.i
+.PHONY : eye_detect_test.cpp.i
 
-Chapter8.s: Chapter8.cpp.s
-.PHONY : Chapter8.s
+eye_detect_test.s: eye_detect_test.cpp.s
+.PHONY : eye_detect_test.s
 
 # target to generate assembly for a file
-Chapter8.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/Chapter8.cpp.s
-.PHONY : Chapter8.cpp.s
+eye_detect_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MyProject.dir/build.make CMakeFiles/MyProject.dir/eye_detect_test.cpp.s
+.PHONY : eye_detect_test.cpp.s
 
 # Help Target
 help:
@@ -162,9 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MyProject"
-	@echo "... Chapter8.o"
-	@echo "... Chapter8.i"
-	@echo "... Chapter8.s"
+	@echo "... eye_detect_test.o"
+	@echo "... eye_detect_test.i"
+	@echo "... eye_detect_test.s"
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MyProject.dir/Chapter8.cpp.o"
-  "CMakeFiles/MyProject.dir/Chapter8.cpp.o.d"
+  "CMakeFiles/MyProject.dir/eye_detect_test.cpp.o"
+  "CMakeFiles/MyProject.dir/eye_detect_test.cpp.o.d"
   "MyProject"
   "MyProject.pdb"
 )
